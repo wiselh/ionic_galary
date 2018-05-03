@@ -13,6 +13,23 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content padding class="main-container">
+   <div class="bg-image"></div>
+    <div paddind>
+        <ion-list>
+            <ion-item>
+                <ion-input type="email" [(ngModel)]="user.email" name="user.email" placeholder="Email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="md-lock"></ion-icon>
+                <ion-input type="password" [(ngModel)]="user.password" name="user.password" placeholder="Password"></ion-input>
+            </ion-item>
+        </ion-list>
+    </div>
+    <div padding>
+        <button ion-button class="login-btn" color="primary" full (click)="signIn()">Sign In</button>
+        <p>You don't have an Account?
+            <button class="register-btn" (click)="signUp()">Create an Account</button>
+        </p>
+    </div>
 </ion-content>

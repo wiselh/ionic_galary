@@ -14,5 +14,26 @@
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Firstname</ion-label>
+      <ion-input type="text" [(ngModel)]="user.firstname" name="firstname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Lastname</ion-label>
+      <ion-input type="text" [(ngModel)]="user.lastname" name="lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="user.email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password" name="password"></ion-input>
+    </ion-item>
+  </ion-list>
+  
+  <div padding>
+    <button ion-button color="secondary" full (click)="register()">Register</button>
+  </div>
 </ion-content>

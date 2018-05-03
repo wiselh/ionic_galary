@@ -1,3 +1,33 @@
 page-login {
+ .main-container{
+        // background: rgb(238, 23, 238);
+        
+        .bg-image{
+            height: 100px;
+            width: 100%;
+            background: url('/assets/imgs/marrakech.jpg') no-repeat ;
+             background-size:100%;
+        }
+    .btn-facebook{
+        background: rgb(59, 89, 152);
+        border-radius: 4px;
+        font-size: 13px;
+    }
+    .login-btn{
+        border-radius: 4px;        
+    }
+    .register-btn{
+        padding: 0px;
+        background: transparent;
+        margin-top: 4px;
+        color: rgb(72, 138, 255); 
+    }
+    .text-network{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
+    }
 }
