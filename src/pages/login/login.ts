@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { User } from '../../models/User';
 import { UserService } from '../../services/user.service';
 import { ToastController } from 'ionic-angular';
@@ -20,12 +20,20 @@ export class LoginPage {
   };
   notLoggedIn: boolean = true;
 
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, 
-    private userService: UserService, private toastCtrl: ToastController) {
+    private userService: UserService, private toastCtrl: ToastController,
+    private menu: MenuController) {
     this.userService.getUsers().subscribe(users => {
       this.users = users;
       
     });
+  }
+  ionViewDidEnter() {
+    this.menu.swipeEnable(false);
+  }
+  ionViewWillLeave() {
+    this.menu.swipeEnable(true);
   }
   signIn(){
     for (var key in this.users) {
