@@ -1,3 +1,47 @@
 page-home {
+    // padding: 5px;
+    .grid-container{
+
+        background: rgb(39, 39, 39);
+    }
+    .img-container{
+        width: 50%;
+        position: relative; 
+        opacity: 1;
+        display: block;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+
+    .img-text {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+        color:white;
+    }
+
+    .img-container:hover img  {
+        opacity: 0.3;
+    }
+
+    .img-container:hover .img-text {
+        opacity: 1;
+    }
+    ion-icon{
+        font-size: 25px;
+    }
+    ion-icon:hover{
+        cursor: pointer;
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+        font-size: 30px;
+        
+    }
 
 }

@@ -7,7 +7,7 @@
 </ion-header>
 
 
-<ion-content padding class="main-container">
+<ion-content padding color="background" class="main-container">
     <div class="bg-image"></div>
     <div paddind class="form">
         <ion-list class="input-list">
@@ -23,7 +23,7 @@
     </div>
     <div padding>
         <button ion-button class="btn-login" color="primary" full (click)="signIn()">Sign In</button>
-        <p>You don't have an Account?<button class="register-btn" clear (click)="signUp()">Create an Account</button>
+        <p>You don't have an Account?<button ion-button class="register-btn" clear (click)="signUp()">Create an Account</button>
         </p>
     </div>
 </ion-content>

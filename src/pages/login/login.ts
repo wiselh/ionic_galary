@@ -26,7 +26,6 @@ export class LoginPage {
     private menu: MenuController) {
     this.userService.getUsers().subscribe(users => {
       this.users = users;
-      
     });
   }
   ionViewDidEnter() {
@@ -40,6 +39,7 @@ export class LoginPage {
       var user = this.users[key];
       if (user.email == this.user.email && user.password == this.user.password) {
         this.presentToast('Logged in successefuly as ' + this.user.email);
+        localStorage.setItem('user', this.user.email);
         this.navCtrl.setRoot(HomePage);
         this.notLoggedIn = false;
       }
