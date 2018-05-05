@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { User } from '../../models/User';
-import { UserService } from '../../services/user.service';
 import { ToastController } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 import { HomePage } from '../home/home';
+import { UserProvider } from '../../providers/user/user';
 
 @IonicPage()
 @Component({
@@ -20,13 +20,13 @@ export class LoginPage {
   };
   notLoggedIn: boolean = true;
 
-  
   constructor(public navCtrl: NavController, public navParams: NavParams, 
-    private userService: UserService, private toastCtrl: ToastController,
+    private userProvider: UserProvider, private toastCtrl: ToastController,
     private menu: MenuController) {
-    this.userService.getUsers().subscribe(users => {
+    this.userProvider.getUsers().subscribe(users => {
       this.users = users;
     });
+    this.user.email = this.navParams.get('email');
   }
   ionViewDidEnter() {
     this.menu.swipeEnable(false);

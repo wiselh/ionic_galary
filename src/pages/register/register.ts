@@ -40,7 +40,7 @@ export class RegisterPage {
     this.usersCollection.add(this.user)
     .then(result => {
       this.presentToast('Registred successefuly');
-      this.navCtrl.setRoot(LoginPage);
+      this.navCtrl.setRoot(LoginPage,{email:this.user.email});
     })
     .catch(error =>{
       this.presentToast(error);
